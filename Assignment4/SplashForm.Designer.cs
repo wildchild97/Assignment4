@@ -28,36 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
+            this.SplashFormTimer = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // LogoPictureBox
             // 
-            this.pictureBox1.Image = global::Assignment4.Properties.Resources.DollarComputers_logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(478, 335);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.LogoPictureBox.Image = global::Assignment4.Properties.Resources.DollarComputers_logo1;
+            this.LogoPictureBox.Location = new System.Drawing.Point(-2, 0);
+            this.LogoPictureBox.Name = "LogoPictureBox";
+            this.LogoPictureBox.Size = new System.Drawing.Size(478, 335);
+            this.LogoPictureBox.TabIndex = 0;
+            this.LogoPictureBox.TabStop = false;
+            // 
+            // SplashFormTimer
+            // 
+            this.SplashFormTimer.Interval = 3000;
             // 
             // SplashForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(473, 331);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.LogoPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox LogoPictureBox;
+        private System.Windows.Forms.Timer SplashFormTimer;
     }
 }

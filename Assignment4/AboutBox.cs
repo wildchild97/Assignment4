@@ -7,6 +7,11 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// App name: Dollar Computers
+// Author's name: Caitlin Foster	        Student	ID: 200311158
+// App Creation	Date: March 12th 2017  
+// App description: This application allows a user to select a computer, be notifed of it's specifications, price and be able to purchase said computer. Or save the order for a later time. 
+
 namespace Assignment4
 {
     partial class AboutBox : Form
@@ -17,7 +22,6 @@ namespace Assignment4
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
         }
@@ -101,5 +105,10 @@ namespace Assignment4
             }
         }
         #endregion
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
