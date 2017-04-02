@@ -12,8 +12,7 @@ namespace Assignment4
         public double Cost { get; set; }
         public string Manufacturer { get; set; }
         public string Model { get; set; }
-        public string RamType { get; set; }
-        public string RamSize { get; set; }
+        public string Ram { get; set; }
         public string Displaytype { get; set; }
         public string ScreenSize { get; set; }
         public string resolution { get; set; }

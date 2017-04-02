@@ -80,6 +80,8 @@ namespace Assignment4
             {
                 filename = OpenComputerFileDialog.FileName;
 
+                string ComputerInfoString = "";
+
                 try
                 {
                     this._reader = new StreamReader(filename);
@@ -87,8 +89,41 @@ namespace Assignment4
                     // check if we haven't arrived at end of file 
                     if (this._reader.Peek() != -1)
                     {
+                        ComputerInfoString = this._reader.ReadLine();
 
+                        this._computer.ProductId = int.Parse(ComputerInfoString.Split(_DELIMETER)[0]); 
+                        this._computer.Condition = ComputerInfoString.Split(_DELIMETER)[1];
+                        this._computer.Cost = double.Parse(ComputerInfoString.Split(_DELIMETER)[3]);
+                        this._computer.Platform = ComputerInfoString.Split(_DELIMETER)[4];
+                        this._computer.OS = ComputerInfoString.Split(_DELIMETER)[5];
+                        this._computer.Manufacturer = ComputerInfoString.Split(_DELIMETER)[6];
+                        this._computer.Model = ComputerInfoString.Split(_DELIMETER)[7];
+                        this._computer.Ram = ComputerInfoString.Split(_DELIMETER)[8];
+                        this._computer.CPUBrand = ComputerInfoString.Split(_DELIMETER)[9];
+                        this._computer.CPUType = ComputerInfoString.Split(_DELIMETER)[10];
+                        this._computer.ScreenSize = ComputerInfoString.Split(_DELIMETER)[11];
+                        this._computer.GPUType = ComputerInfoString.Split(_DELIMETER)[12];
+                        this._computer.CPUNumber = ComputerInfoString.Split(_DELIMETER)[13];
+                        this._computer.CPUSpeed = ComputerInfoString.Split(_DELIMETER)[14];
+                        this._computer.HDDSize = ComputerInfoString.Split(_DELIMETER)[15];
+                        this._computer.Webcam = ComputerInfoString.Split(_DELIMETER)[16];
 
+                        ProductIDTextBox.Text = Convert.ToString(this._computer.ProductId);
+                        ConditionTextBox.Text = this._computer.Condition;
+                        CostTextBox.Text = Convert.ToString(this._computer.Cost);
+                        PlatformTextBox.Text = this._computer.Platform;
+                        OSTextBox.Text = this._computer.OS;
+                        ManufacturerTextBox.Text = this._computer.Manufacturer;
+                        ModelTextBox.Text = this._computer.Model;
+                        MemoryTextBox.Text = this._computer.Ram;
+                        CPUBrandTextBox.Text = this._computer.CPUBrand;
+                        CPUTypeTextBox.Text = this._computer.CPUType;
+                        LCDTextBox.Text = this._computer.ScreenSize;
+                        GPUTypeTextBox.Text = this._computer.GPUType;
+                        CPUNumberTextBox.Text = this._computer.CPUNumber;
+                        CPUSpeedTextBox.Text = this._computer.CPUSpeed;
+                        HDDTextBox.Text = this._computer.HDDSize;
+                        WebCamTextBox.Text = this._computer.Webcam;
                     }
                     else
                     {
@@ -161,12 +196,6 @@ namespace Assignment4
                     this._writer.WriteLine(ManufacturerTextBox.Text);
                     this._writer.Write(_DELIMETER);
 
-                    this._writer.Write(OSTextBox.Text);
-                    this._writer.Write(_DELIMETER);
-
-                    this._writer.WriteLine(ManufacturerTextBox.Text);
-                    this._writer.Write(_DELIMETER);
-
                     this._writer.Write(ModelTextBox.Text);
                     this._writer.Write(_DELIMETER);
 
@@ -181,6 +210,7 @@ namespace Assignment4
 
                     this._writer.Write(LCDTextBox.Text);
                     this._writer.Write(_DELIMETER);
+
                     this._writer.WriteLine(GPUTypeTextBox.Text);
                     this._writer.Write(_DELIMETER);
 
