@@ -120,13 +120,14 @@
             // PrintToolStripMenuItem
             // 
             this.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem";
-            this.PrintToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.PrintToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.PrintToolStripMenuItem.Text = "&Print";
+            this.PrintToolStripMenuItem.Click += new System.EventHandler(this._printToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this._exit_Click);
             // 
@@ -143,6 +144,7 @@
             this.BackToolStripMenuItem.Name = "BackToolStripMenuItem";
             this.BackToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.BackToolStripMenuItem.Text = "&Back";
+            this.BackToolStripMenuItem.Click += new System.EventHandler(this._back_Click);
             // 
             // HelpToolStripMenuItem
             // 
@@ -155,9 +157,9 @@
             // AboutToolStripMenuItem
             // 
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.AboutToolStripMenuItem.Text = "&About";
-            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this._aboutToolStripMenuItem_Click);
             // 
             // PriceGroupBox
             // 
@@ -241,6 +243,7 @@
             this.BackButton.TabIndex = 3;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this._back_Click);
             // 
             // CancelButton
             // 
@@ -260,6 +263,7 @@
             this.FinishButton.TabIndex = 5;
             this.FinishButton.Text = "Finish";
             this.FinishButton.UseVisualStyleBackColor = true;
+            this.FinishButton.Click += new System.EventHandler(this._finishButton_Click);
             // 
             // groupBox1
             // 

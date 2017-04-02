@@ -59,11 +59,11 @@
             this.CPUNumberLabel = new System.Windows.Forms.Label();
             this.LCDTextBox = new System.Windows.Forms.TextBox();
             this.LCDSizeLabel = new System.Windows.Forms.Label();
-            this.GPUTextBox = new System.Windows.Forms.TextBox();
+            this.GPUTypeTextBox = new System.Windows.Forms.TextBox();
             this.GPUTypeLabel = new System.Windows.Forms.Label();
             this.HDDTextBox = new System.Windows.Forms.TextBox();
             this.HDDLabel = new System.Windows.Forms.Label();
-            this.CPUTextBox = new System.Windows.Forms.TextBox();
+            this.CPUTypeTextBox = new System.Windows.Forms.TextBox();
             this.CPUTypeLabel = new System.Windows.Forms.Label();
             this.ConditionTextBox = new System.Windows.Forms.TextBox();
             this.ConditionLabel = new System.Windows.Forms.Label();
@@ -73,7 +73,7 @@
             this.CancelButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.OpenComputerFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.SaveComputerFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.ProductInfoGroupBox.SuspendLayout();
             this.TechSpecsGroupBox.SuspendLayout();
@@ -112,12 +112,14 @@
             this.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem";
             this.SaveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.SaveToolStripMenuItem.Text = "&Save";
+            this.SaveToolStripMenuItem.Click += new System.EventHandler(this._saveToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ExitToolStripMenuItem.Text = "E&xit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this._cancel_Click);
             // 
             // EditToolStripMenuItem
             // 
@@ -132,6 +134,7 @@
             this.SelectAnotherToolStripMenuItem.Name = "SelectAnotherToolStripMenuItem";
             this.SelectAnotherToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.SelectAnotherToolStripMenuItem.Text = "Se&lect Another Product";
+            this.SelectAnotherToolStripMenuItem.Click += new System.EventHandler(this._productButton_Click);
             // 
             // ProductIDLabel
             // 
@@ -303,7 +306,7 @@
             // CPUNumberLabel
             // 
             this.CPUNumberLabel.AutoSize = true;
-            this.CPUNumberLabel.Location = new System.Drawing.Point(297, 36);
+            this.CPUNumberLabel.Location = new System.Drawing.Point(279, 24);
             this.CPUNumberLabel.Name = "CPUNumberLabel";
             this.CPUNumberLabel.Size = new System.Drawing.Size(69, 13);
             this.CPUNumberLabel.TabIndex = 27;
@@ -325,12 +328,12 @@
             this.LCDSizeLabel.TabIndex = 25;
             this.LCDSizeLabel.Text = "LCD Size";
             // 
-            // GPUTextBox
+            // GPUTypeTextBox
             // 
-            this.GPUTextBox.Location = new System.Drawing.Point(83, 151);
-            this.GPUTextBox.Name = "GPUTextBox";
-            this.GPUTextBox.Size = new System.Drawing.Size(145, 20);
-            this.GPUTextBox.TabIndex = 24;
+            this.GPUTypeTextBox.Location = new System.Drawing.Point(83, 151);
+            this.GPUTypeTextBox.Name = "GPUTypeTextBox";
+            this.GPUTypeTextBox.Size = new System.Drawing.Size(145, 20);
+            this.GPUTypeTextBox.TabIndex = 24;
             // 
             // GPUTypeLabel
             // 
@@ -357,12 +360,12 @@
             this.HDDLabel.TabIndex = 21;
             this.HDDLabel.Text = "HDD";
             // 
-            // CPUTextBox
+            // CPUTypeTextBox
             // 
-            this.CPUTextBox.Location = new System.Drawing.Point(83, 87);
-            this.CPUTextBox.Name = "CPUTextBox";
-            this.CPUTextBox.Size = new System.Drawing.Size(145, 20);
-            this.CPUTextBox.TabIndex = 20;
+            this.CPUTypeTextBox.Location = new System.Drawing.Point(83, 87);
+            this.CPUTypeTextBox.Name = "CPUTypeTextBox";
+            this.CPUTypeTextBox.Size = new System.Drawing.Size(145, 20);
+            this.CPUTypeTextBox.TabIndex = 20;
             // 
             // CPUTypeLabel
             // 
@@ -398,7 +401,6 @@
             this.ProductInfoGroupBox.Controls.Add(this.OSTextBox);
             this.ProductInfoGroupBox.Controls.Add(this.OSLabel);
             this.ProductInfoGroupBox.Controls.Add(this.ModelTextBox);
-            this.ProductInfoGroupBox.Controls.Add(this.CPUNumberLabel);
             this.ProductInfoGroupBox.Controls.Add(this.ModelLabel);
             this.ProductInfoGroupBox.Location = new System.Drawing.Point(13, 67);
             this.ProductInfoGroupBox.Name = "ProductInfoGroupBox";
@@ -416,13 +418,14 @@
             this.TechSpecsGroupBox.Controls.Add(this.CPUSpeedTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.CPUSpeedLabel);
             this.TechSpecsGroupBox.Controls.Add(this.CPUNumberTextBox);
+            this.TechSpecsGroupBox.Controls.Add(this.CPUNumberLabel);
             this.TechSpecsGroupBox.Controls.Add(this.CPUBrandLabel);
             this.TechSpecsGroupBox.Controls.Add(this.LCDTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.CPUBrandTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.LCDSizeLabel);
-            this.TechSpecsGroupBox.Controls.Add(this.CPUTextBox);
+            this.TechSpecsGroupBox.Controls.Add(this.CPUTypeTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.CPUTypeLabel);
-            this.TechSpecsGroupBox.Controls.Add(this.GPUTextBox);
+            this.TechSpecsGroupBox.Controls.Add(this.GPUTypeTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.GPUTypeLabel);
             this.TechSpecsGroupBox.Controls.Add(this.HDDTextBox);
             this.TechSpecsGroupBox.Controls.Add(this.HDDLabel);
@@ -441,6 +444,7 @@
             this.ProductButton.TabIndex = 35;
             this.ProductButton.Text = "Select Another Product";
             this.ProductButton.UseVisualStyleBackColor = true;
+            this.ProductButton.Click += new System.EventHandler(this._productButton_Click);
             // 
             // CancelButton
             // 
@@ -450,7 +454,7 @@
             this.CancelButton.TabIndex = 36;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.CancelButton.Click += new System.EventHandler(this._cancel_Click);
             // 
             // NextButton
             // 
@@ -532,11 +536,11 @@
         private System.Windows.Forms.Label CPUNumberLabel;
         private System.Windows.Forms.TextBox LCDTextBox;
         private System.Windows.Forms.Label LCDSizeLabel;
-        private System.Windows.Forms.TextBox GPUTextBox;
+        private System.Windows.Forms.TextBox GPUTypeTextBox;
         private System.Windows.Forms.Label GPUTypeLabel;
         private System.Windows.Forms.TextBox HDDTextBox;
         private System.Windows.Forms.Label HDDLabel;
-        private System.Windows.Forms.TextBox CPUTextBox;
+        private System.Windows.Forms.TextBox CPUTypeTextBox;
         private System.Windows.Forms.Label CPUTypeLabel;
         private System.Windows.Forms.TextBox ConditionTextBox;
         private System.Windows.Forms.Label ConditionLabel;
@@ -546,6 +550,6 @@
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.OpenFileDialog OpenComputerFileDialog;
-        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.SaveFileDialog SaveComputerFileDialog;
     }
 }

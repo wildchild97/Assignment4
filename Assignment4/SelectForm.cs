@@ -20,6 +20,8 @@ namespace Assignment4
         public StartForm previousForm;
 
         //PRIVTAE INSTANCE VARIABLES
+
+        //CONSTRUCTOR++++++++++++++++++++++
         public SelectForm()
         {
             InitializeComponent();
@@ -27,11 +29,21 @@ namespace Assignment4
 
         ////PRIVATE METHODS++++++++++++++++++++
 
+        /// <summary>
+        /// this method closes the program when the cancel button is pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// when the next button is pressed the select form is hidden and the productinfo form is opened
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _nextButton_Click(object sender, EventArgs e)
         {
             // Instantiate the next form

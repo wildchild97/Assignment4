@@ -17,11 +17,17 @@ namespace Assignment4
 {
     public partial class SplashForm : Form
     {
+        //CONSTRUCTOR++++++++++++++++++++++
         public SplashForm()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// this method closes the splash form and opens the starform once the timer is up
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SplashFormTimer_Tick(object sender, EventArgs e)
         {
             StartForm startForm = new StartForm();
