@@ -31,8 +31,31 @@ namespace Assignment4
         public ProductInfoForm()
         {
             InitializeComponent();
+            loadTextBoxes();
         }
 
+        /// <summary>
+        /// this method loads the product data into the textboxes
+        /// </summary>
+        private void loadTextBoxes()
+        {
+            ProductIDTextBox.Text = Convert.ToString(this._computer.ProductId);
+            ConditionTextBox.Text = this._computer.Condition;
+            CostTextBox.Text = Convert.ToString(this._computer.Cost);
+            PlatformTextBox.Text = this._computer.Platform;
+            OSTextBox.Text = this._computer.OS;
+            ManufacturerTextBox.Text = this._computer.Manufacturer;
+            ModelTextBox.Text = this._computer.Model;
+            MemoryTextBox.Text = this._computer.Ram;
+            CPUBrandTextBox.Text = this._computer.CPUBrand;
+            CPUTypeTextBox.Text = this._computer.CPUType;
+            LCDTextBox.Text = this._computer.ScreenSize;
+            GPUTypeTextBox.Text = this._computer.GPUType;
+            CPUNumberTextBox.Text = this._computer.CPUNumber;
+            CPUSpeedTextBox.Text = this._computer.CPUSpeed;
+            HDDTextBox.Text = this._computer.HDDSize;
+            WebCamTextBox.Text = this._computer.Webcam;
+        }
         ////PRIVATE METHODS++++++++++++++++++++
 
         /// <summary>

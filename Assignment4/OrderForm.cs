@@ -20,11 +20,56 @@ namespace Assignment4
         public ProductInfoForm previousForm;
 
         //PRIVTAE INSTANCE VARIABLES
+        private Computer _computer;
+        private double _tax;
+        private double _totalCost;
 
         //CONSTRUCTOR++++++++++++++++++++++
         public OrderForm()
         {
             InitializeComponent();
+
+            //calculate product tax and price
+            calculateTax();
+
+            // load the data into the textboxes
+            loadTextBoxes();
+
+
+        }
+
+        /// <summary>
+        /// this method calculates the sales tax of the users chosen product
+        /// </summary>
+        public void calculateTax()
+        {
+            this. _tax = _computer.Cost * 0.13;
+            this._totalCost = _computer.Cost + _tax;
+            
+        }
+
+        /// <summary>
+        /// this method loads the product data into appropriate textboxes
+        /// </summary>
+        public void loadTextBoxes()
+        {
+            ConditionTextBox.Text = this._computer.Condition;
+            PriceTextBox.Text = Convert.ToString(_computer.Cost);
+            PlatformTextBox.Text = this._computer.Platform;
+            OSTextBox.Text = this._computer.OS;
+            ManufacturerTextBox.Text = this._computer.Manufacturer;
+            ModelTextBox.Text = this._computer.Model;
+            MemoryTextBox.Text = this._computer.Ram;
+            CPUBrandTextBox.Text = this._computer.CPUBrand;
+            CPUTextBox.Text = this._computer.CPUType;
+            LCDTextBox.Text = this._computer.ScreenSize;
+            GPUTextBox.Text = this._computer.GPUType;
+            CPUNumTextBox.Text = this._computer.CPUNumber;
+            CPUSpeedTextBox.Text = this._computer.CPUSpeed;
+            HardDriveTextBox.Text = this._computer.HDDSize;
+            CamTextBox.Text = this._computer.Webcam;
+            TaxTextBox.Text = Convert.ToString(this._tax);
+            TotalTextBox.Text = Convert.ToString(_totalCost);
         }
 
         ////PRIVATE METHODS++++++++++++++++++++
@@ -69,7 +114,8 @@ namespace Assignment4
         /// <param name="e"></param>
         private void _back_Click(object sender, EventArgs e)
         {
-
+            previousForm.Show();
+            this.Hide();
         }
 
         /// <summary>
